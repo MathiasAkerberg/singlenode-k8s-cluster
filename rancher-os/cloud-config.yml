@@ -1,0 +1,15 @@
+#cloud-config
+rancher:
+  console: default
+  docker:
+    engine: docker-19.03.5
+  network:
+    interfaces:
+      eth0:
+        address: 192.168.1.155/24
+        gateway: 192.168.1.1
+        dhcp: false
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkI3F8ZYRkOPHf4oAwLvGjJVew9wWyQxbhOU+78IDiMvef+IySDOd5E3KoGnrf0+rWsxMgIdNRGTzPfZZgMMR5oHEqTeJrTbnzf06bWGICVIFuog99bpA8XuSBpptl8WTmMvO7JLjygLBl2AD55r/KG2IsNYpIimWiwJ8nHJibUw7/oqoYY4ouFVLQT31pThaScEj1O+GSwUC+Ys2UuoyaoC5+8r1WrO1wVnHclrTTRx1itR1TOnMhVo0nBZtWeU36FFUy8x7Sq91dZ5ivKzVr00Ac0UkMnkKA6JO6ePOFBAtva+ZDwRlvxYiEXyhKjNIgx3jHtuM/Dl/xYZsG0VUz
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVXrWar6ofsUZJMbFvLS71BgRaI9Wq1m7hgmESmQAMmi0B8N7dRSlaQ+Kx+7oPPh9Zvi85iVIG1A6XH14H0unyXddXrEybB4SSL1qS8zFgNkyqefEAVI/JKX1Ycti9Mi5LuyeX2/o6x64Cp+XiVqe+67o2YojhQFFHPNS+nPglGcjUxuxlVbFLInJ2Zh3+ud2oVncge+C1BrqRokMAcaqVaWVq+/louTVH+G+EdgXuzOgMKER+BBHVvjngMxobfpU7//NtiASmZUQe+tAvB5wWzCxgdUTiDMKID9FN9nkju/SLpOZpWXZqeJvXDlfV7rffLAtuOUaZc0ldkPBV40jF4rtT81Pg+Q5bZTKcXJcZlOa1oNW9OLgtaQ/VcBcSKC/OMyW5cMWVl0zBWNbSAmgk0rNRg6W3kV7jXB8PsOUtL0Zhl2U8cv4aOH4nZY7CRJ0emaZe+vUJ1TnEjPgk+W85bWNj+WFQJXzsSfc7/GN+1It5DvX/UbEUZBeZSHII2xkOf5JQrossTZouSUXQOyH8jXjHbbA81keAAZvhak2WwBmxB6T8lHShH0TShuM0bnIJ2Ktm/r4NkTxi3KbcXXUDagVJx+iArJItkP5RNZgJa/2B8Q1YvWHBFlTAnLlIwtgwObsPuWem7Gj6JzK4BBUEktviVZojY2T6WEDHW4LAmw==
+    mathias.akerberg@sr.se

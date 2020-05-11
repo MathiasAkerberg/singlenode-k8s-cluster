@@ -1,0 +1,47 @@
+nodes:
+    - address: 192.168.1.155
+      hostname_override: single-node-cluster01
+      port: "22"
+      role:
+      - controlplane
+      - worker
+      - etcd
+      user: rancher
+      docker_socket: /var/run/docker.sock
+      ssh_key_path: ~/.ssh/id_rsa
+cluster_name: "lab01"
+ssh_agent_auth: true
+services:
+    kube-api:
+      audit_log:
+        enabled: true
+        configuration:
+            max_age: 6
+            max_backup: 6
+            max_size: 1 # Size in Megabyte
+            path: /var/log/kube-audit/audit-log.json
+            format: json
+    kubelet:
+        extra_binds:
+            - "/var/lib/elasticsearch:/var/lib/elasticsearch"
+authentication:
+    strategy: x509
+    sans:
+      - "192.168.1.155"
+addons: |-
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: test-pod
+      namespace: default
+    spec:
+      containers:
+      - name: test-pod
+        image: nginx
+        ports:
+        - containerPort: 80
+ingress:
+    provider: nginx
+    options:
+        use-forwarded-headers: 'true'

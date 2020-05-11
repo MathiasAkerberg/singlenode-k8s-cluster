@@ -1,0 +1,4 @@
+rke/*.rkestate
+rke/kube_config*.yml
+tls.crt
+tls.key
